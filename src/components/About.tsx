@@ -21,7 +21,7 @@ const fadeUp = {
 
 export default function About() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
     <section id="about" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30">

@@ -20,7 +20,7 @@ const typeColors: Record<string, string> = {
 
 export default function Experience() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
     <section id="experience" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30">
@@ -28,7 +28,7 @@ export default function Experience() {
         {/* Header */}
         <motion.div
           custom={0}
-          // variants={fadeUp}
+          variants={fadeUp}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="mb-16"

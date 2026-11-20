@@ -13,7 +13,7 @@ const fadeUp = {
 
 export default function Education() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
     <section id="education" className="py-24 lg:py-32">

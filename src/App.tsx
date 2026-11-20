@@ -8,11 +8,19 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CustomCursor from "./components/CustomCursor";
+import ScrollProgress from "./components/ScrollProgress";
+import ClickSpark from "./components/ClickSpark";
 
 export default function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+        {/* Subtle, non-intrusive interactive enhancements */}
+        <CustomCursor />
+        <ScrollProgress />
+        <ClickSpark />
+
         <Navbar />
         <main>
           <Hero />

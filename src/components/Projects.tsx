@@ -109,7 +109,7 @@ function ProjectCard({
 
 export default function Projects() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-40px" });
   const [active, setActive] = useState<ProjectCategory>("All");
 
   const filtered =
