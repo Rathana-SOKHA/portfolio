@@ -4,7 +4,38 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
+
+    <!-- SEO -->
+    <title>Alex Morgan — Full-Stack Developer & UI Engineer</title>
+    <meta name="description" content="Alex Morgan is a full-stack developer and UI engineer specializing in React, TypeScript, and thoughtful digital experiences." />
+    <meta name="keywords" content="full-stack developer, frontend engineer, React, TypeScript, UI/UX, portfolio" />
+    <meta name="author" content="Alex Morgan" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alex Morgan — Full-Stack Developer & UI Engineer" />
+    <meta property="og:description" content="Crafting digital experiences that balance form and function." />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Morgan — Full-Stack Developer & UI Engineer" />
+    <meta name="twitter:description" content="Crafting digital experiences that balance form and function." />
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Prevent FOUC for dark mode -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('portfolio-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
