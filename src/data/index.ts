@@ -38,18 +38,19 @@ export const skills = [
     category: "Frontend Development",
     icon: "Monitor",
     items: [
-      { name: "React / Next.js", level: 95 },
+      { name: "React / Next.js", level: 90 },
+      { name: "Vue.js", level: 90},
       { name: "TypeScript", level: 90 },
       { name: "HTML5 & CSS3", level: 95 },
       { name: "Tailwind CSS", level: 90 },
-      { name: "Framer Motion", level: 80 },
     ],
   },
   {
     category: "Backend Development",
     icon: "Server",
     items: [
-      { name: "Node.js / Express", level: 88 },
+      { name: "Node.js / Express", level: 90 },
+      { name: "Laravel / PHP", level: 90},
       { name: "REST API Design", level: 90 },
       { name: "GraphQL", level: 75 },
       { name: "Python / FastAPI", level: 70 },

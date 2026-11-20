@@ -28,7 +28,7 @@ export default function Experience() {
         {/* Header */}
         <motion.div
           custom={0}
-          variants={fadeUp}
+          // variants={fadeUp}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="mb-16"
@@ -37,7 +37,7 @@ export default function Experience() {
             Experience
           </span>
           <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-            Work history.
+            Work Experiences.
           </h2>
           <p className="mt-3 text-zinc-500 dark:text-zinc-400 max-w-lg">
             Places I've contributed to, roles I've grown through, and teams I've learned from.
