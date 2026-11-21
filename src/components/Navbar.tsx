@@ -86,10 +86,14 @@ export default function Navbar() {
             {/* Logo */}
             <button
               onClick={() => handleNav("#home")}
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2.5 group"
             >
-              <div className="w-8 h-8 rounded-lg bg-indigo-600 dark:bg-indigo-500 flex items-center justify-center text-white font-bold text-sm transition-transform group-hover:scale-110">
-                {personal.firstName[0]}{personal.lastName[0]}
+              <div className="w-8 h-8 rounded-lg overflow-hidden border border-indigo-200 dark:border-indigo-800 shadow-sm transition-transform group-hover:scale-110">
+                <img
+                  src={personal.avatar}
+                  alt={personal.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
                 {personal.firstName}
