@@ -97,27 +97,33 @@ export default function Contact() {
             animate={inView ? "visible" : "hidden"}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="bg-zinc-900 dark:bg-zinc-800 rounded-3xl p-8 text-white">
-              <h3 className="font-semibold text-lg mb-2">Get in touch</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+            <div className="bg-white dark:bg-zinc-900 rounded-3xl p-8 border border-zinc-200/80 dark:border-zinc-800 shadow-sm transition-colors duration-300">
+              <h3 className="font-bold text-xl text-zinc-900 dark:text-zinc-50 mb-3 tracking-tight">
+                Get in touch
+              </h3>
+              <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
                 I'm currently available for freelance projects and full-time opportunities. Response time is typically within 24 hours.
               </p>
 
               <div className="space-y-4">
                 <a
                   href={`mailto:${personal.email}`}
-                  className="flex items-center gap-3 text-sm text-zinc-300 hover:text-white transition-colors"
+                  className="group flex items-center gap-3.5 p-3 rounded-2xl bg-zinc-50 dark:bg-zinc-800/60 hover:bg-indigo-50/70 dark:hover:bg-zinc-800 border border-zinc-100 dark:border-zinc-700/50 transition-all duration-200"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-600 dark:bg-indigo-500 text-white flex items-center justify-center shrink-0 shadow-sm shadow-indigo-500/20 group-hover:scale-105 transition-transform">
                     <Mail size={16} />
                   </div>
-                  {personal.email}
+                  <span className="text-sm font-medium text-zinc-800 dark:text-zinc-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate">
+                    {personal.email}
+                  </span>
                 </a>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-zinc-700/60">
-                <p className="text-xs text-zinc-500 font-medium uppercase tracking-widest mb-4">Follow me</p>
-                <div className="flex gap-2">
+              <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-zinc-800">
+                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-4">
+                  Follow me
+                </p>
+                <div className="flex gap-2.5">
                   {socialLinks.map(({ icon: Icon, href, label }) => (
                     <a
                       key={label}
@@ -125,7 +131,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="w-10 h-10 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                      className="w-10 h-10 rounded-xl bg-zinc-50 dark:bg-zinc-800/80 border border-zinc-200/60 dark:border-zinc-700/60 text-zinc-600 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-zinc-100 hover:bg-indigo-50 dark:hover:bg-zinc-800 hover:border-indigo-200 dark:hover:border-zinc-600 flex items-center justify-center transition-all duration-200 shadow-sm"
                     >
                       <Icon size={16} />
                     </a>
