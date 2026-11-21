@@ -116,8 +116,8 @@ export default function Projects() {
     active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
+    <section id="projects" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" ref={ref}>
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
           <motion.div

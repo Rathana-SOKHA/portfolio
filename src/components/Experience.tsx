@@ -23,8 +23,8 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
-    <section id="experience" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
+    <section id="experience" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" ref={ref}>
         {/* Header */}
         <motion.div
           custom={0}

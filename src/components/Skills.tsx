@@ -90,8 +90,8 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
-    <section id="skills" className="py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
+    <section id="skills" className="py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" ref={ref}>
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
           <motion.div

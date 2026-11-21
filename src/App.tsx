@@ -15,14 +15,14 @@ import ClickSpark from "./components/animations/ClickSpark";
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+      <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
         {/* Subtle, non-intrusive interactive enhancements */}
         <CustomCursor />
         <ScrollProgress />
         <ClickSpark />
 
         <Navbar />
-        <main>
+        <main className="w-full max-w-full overflow-x-hidden">
           <Hero />
           <About />
           <Skills />

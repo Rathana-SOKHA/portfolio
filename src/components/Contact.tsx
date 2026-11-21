@@ -67,8 +67,8 @@ export default function Contact() {
     }`;
 
   return (
-    <section id="contact" className="py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
+    <section id="contact" className="py-24 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" ref={ref}>
         {/* Header */}
         <motion.div
           custom={0}

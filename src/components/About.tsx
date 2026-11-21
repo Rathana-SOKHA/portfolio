@@ -24,8 +24,8 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
   return (
-    <section id="about" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
+    <section id="about" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" ref={ref}>
         {/* Section header */}
         <motion.div
           custom={0}
@@ -42,7 +42,7 @@ export default function About() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Left — image */}
           <motion.div
             custom={1}
