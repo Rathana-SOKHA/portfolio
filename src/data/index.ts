@@ -104,25 +104,25 @@ export type ProjectCategory = "All" | "Web App" | "Mobile" | "Open Source" | "De
 export const projects = [
   {
     id: 1,
-    title: "Luminary — SaaS Dashboard",
+    title: "Sun and Moon Laundry Service",
     description:
       "A comprehensive analytics dashboard for SaaS businesses. Features real-time data visualization, team collaboration tools, and an AI-powered insights engine.",
     category: "Web App" as ProjectCategory,
     featured: true,
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Recharts"],
+    tags: ["React.js", "TypeScript", "Node.js", "PostgreSQL", "Docker", "CI/CD"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Forge — Design System",
+    title: "IT Asset & Invontory Management System ",
     description:
       "An open-source component library and design system built for scalability. Includes 60+ components, Figma integration, and comprehensive documentation.",
     category: "Open Source" as ProjectCategory,
     featured: true,
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
-    tags: ["React", "Storybook", "Figma", "TypeScript"],
+    tags: ["React.js", "TypeScript", "Laravel", "MySQL", "Docker", "CI/CD"],
     liveUrl: "#",
     githubUrl: "#",
   },

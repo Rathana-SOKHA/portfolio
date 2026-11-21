@@ -59,10 +59,6 @@ export default function Hero() {
 
             {/* Headline */}
             <motion.div variants={itemVariants} className="space-y-3">
-              <div className="flex items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium tracking-wide uppercase">
-                <MapPin size={14} />
-                {personal.location}
-              </div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.05]">
                 {personal.firstName}{" "}
                 <span className="text-indigo-600 dark:text-indigo-400">
