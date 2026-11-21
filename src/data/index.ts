@@ -81,6 +81,7 @@ export const skills = [
     category: "Database & Tools",
     icon: "Database",
     items: [
+      { name: "MySQL", level: 95},
       { name: "PostgreSQL", level: 85 },
       { name: "MongoDB", level: 78 },
       { name: "Redis", level: 70 },
