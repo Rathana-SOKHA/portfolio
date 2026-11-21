@@ -20,7 +20,7 @@ export const personal = {
   cvUrl: "#",
   avatar: profileImg,
   social: {
-    github: "https://github.com",
+    github: "https://github.com/Rathana-SOKHA",
     linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
     facebook: "https://facebook.com",
