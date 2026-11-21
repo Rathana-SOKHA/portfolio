@@ -221,12 +221,12 @@ export const education = [
 export const experience = [
   {
     id: 1,
-    company: "Vercel",
-    role: "Senior Frontend Engineer",
-    type: "Full-time",
-    start: "2022",
+    company: "THE LUMINIX CO., LTD.",
+    role: "Enterprise Applications & Software Development Engineer",
+    type: "Intership",
+    start: "1 Sep 2026",
     end: "Present",
-    location: "San Francisco, CA (Remote)",
+    location: "Chroy Changvar, Phnom Penh, Cambodia.",
     description:
       "Leading frontend architecture for the Next.js dashboard and developer tooling products. Working closely with the design and DevEx teams.",
     responsibilities: [
@@ -235,7 +235,7 @@ export const experience = [
       "Mentored 3 junior engineers and ran bi-weekly frontend office hours.",
       "Collaborated with design to build a fully accessible UI token system.",
     ],
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vercel Edge"],
+    technologies: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Laravel/PHP"],
   },
   {
     id: 2,
