@@ -1,6 +1,7 @@
 // ============================================================
 // CENTRALIZED DATA — edit this file to customize your portfolio
 // ============================================================
+import profileImg from "../assets/profile.png";
 
 export const personal = {
   name: "Rathana Sokha",
@@ -17,7 +18,7 @@ export const personal = {
   availability: true,
   availabilityText: "Open to opportunities",
   cvUrl: "#",
-  avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+  avatar: profileImg,
   social: {
     github: "https://github.com",
     linkedin: "https://linkedin.com",
