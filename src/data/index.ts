@@ -128,13 +128,13 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Meridian — Travel App",
+    title: "Freelancer Marketplace",
     description:
       "A mobile-first travel planning application with offline support, collaborative itinerary building, and intelligent recommendations based on past trips.",
-    category: "Mobile" as ProjectCategory,
+    category: "Web" as ProjectCategory,
     featured: true,
     image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=500&fit=crop",
-    tags: ["React Native", "Expo", "GraphQL", "MongoDB"],
+    tags: ["React.js", "TypeScript", "Node.js", "Express.js", "Prisma", "MySQL", "Docker"],
     liveUrl: "#",
     githubUrl: "#",
   },
