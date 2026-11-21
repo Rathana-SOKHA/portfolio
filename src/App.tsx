@@ -8,9 +8,9 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import CustomCursor from "./components/CustomCursor";
-import ScrollProgress from "./components/ScrollProgress";
-import ClickSpark from "./components/ClickSpark";
+import CustomCursor from "./components/animations/CustomCursor";
+import ScrollProgress from "./components/animations/ScrollProgress";
+import ClickSpark from "./components/animations/ClickSpark";
 
 export default function App() {
   return (
