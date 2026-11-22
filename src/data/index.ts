@@ -42,8 +42,9 @@ export const skills = [
       { name: "React / Next.js", level: 90 },
       { name: "Vue.js", level: 90},
       { name: "TypeScript", level: 90 },
-      { name: "HTML5 & CSS3", level: 95 },
+      { name: "JavaScript", level: 90},
       { name: "Tailwind CSS", level: 90 },
+      { name: "HTML5 & CSS3", level: 95 },
     ],
   },
   {
