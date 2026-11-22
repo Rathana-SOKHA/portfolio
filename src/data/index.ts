@@ -155,13 +155,13 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Carta — Portfolio Builder",
+    title: "Clearning Service Web Application",
     description:
       "A drag-and-drop portfolio builder that generates blazing-fast static sites. Supports custom domains, analytics, and password-protected pages.",
     category: "Web App" as ProjectCategory,
     featured: false,
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop",
-    tags: ["Next.js", "React DnD", "AWS S3", "Stripe"],
+    tags: ["Node.js", "Express.js", "React.js", "Tailwindcss", "MySQL", "TypeORM"],
     liveUrl: "#",
     githubUrl: "#",
   },
