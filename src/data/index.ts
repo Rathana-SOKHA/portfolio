@@ -170,7 +170,7 @@ export const projects = [
     title: "E-Commerice Management System",
     description:
       "Complete brand identity design for a creative agency. Includes logo, typography system, color palette, and comprehensive brand guidelines.",
-    category: "Design" as ProjectCategory,
+    category: "Web" as ProjectCategory,
     featured: true,
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
     tags: ["Laravel Blade", "Vue.js", "TypeScript", "Tailwindcss", "MySQL", "OAuth", "Telegram bot"],
