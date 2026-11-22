@@ -143,13 +143,13 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Pulse — Health Tracker",
+    title: "PNC Student Selection Management System",
     description:
       "A health and fitness tracking platform with habit streaks, nutrition logging, and personalized coaching. Integrates with wearable devices.",
     category: "Web App" as ProjectCategory,
     featured: false,
     image: "https://images.unsplash.com/photo-1575389430958-f06c655da0ab?w=800&h=500&fit=crop",
-    tags: ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
+    tags: ["Laravel", "Vue.js", "TypeScript", "Tailwind", "MySQL", "JWT"],
     liveUrl: "#",
     githubUrl: "#",
   },
