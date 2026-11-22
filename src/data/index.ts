@@ -53,9 +53,10 @@ export const skills = [
     items: [
       { name: "Node.js / Express", level: 90 },
       { name: "Laravel / PHP", level: 90},
-      { name: "REST API Design", level: 90 },
-      { name: "GraphQL", level: 75 },
+      { name: "Java / Sprint Boot", level: 50},
       { name: "Python / FastAPI", level: 70 },
+      { name: "Go", level: 40 },
+      { name: "REST API Design", level: 90 },
     ],
   },
   {
