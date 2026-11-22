@@ -167,13 +167,13 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Spectrum — Brand Identity",
+    title: "E-Commerice Management System",
     description:
       "Complete brand identity design for a creative agency. Includes logo, typography system, color palette, and comprehensive brand guidelines.",
     category: "Design" as ProjectCategory,
-    featured: false,
+    featured: true,
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
-    tags: ["Figma", "Illustrator", "Branding", "Typography"],
+    tags: ["Laravel Blade", "Vue.js", "TypeScript", "Tailwindcss", "MySQL", "OAuth", "Telegram bot"],
     liveUrl: "#",
     githubUrl: "#",
   },
