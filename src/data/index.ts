@@ -22,7 +22,7 @@ export const personal = {
   social: {
     github: "https://github.com/Rathana-SOKHA",
     linkedin: "https://linkedin.com",
-    telegram: "https://t.me",
+    telegram: "https://t.me/rathana_sokha",
     twitter: "https://twitter.com",
     facebook: "https://facebook.com",
   },
