@@ -3,6 +3,8 @@
 // ============================================================
 import profileImg from "../assets/profile.png";
 
+import smlImg from '../assets/projects/sml.png';
+
 export const personal = {
   name: "Rathana Sokha",
   firstName: "Rathana",
@@ -112,7 +114,7 @@ export const projects = [
       "A comprehensive analytics dashboard for SaaS businesses. Features real-time data visualization, team collaboration tools, and an AI-powered insights engine.",
     category: "Web App" as ProjectCategory,
     featured: true,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    image: smlImg,
     tags: ["React.js", "TypeScript", "Node.js", "PostgreSQL", "Docker", "CI/CD"],
     liveUrl: "#",
     githubUrl: "#",
