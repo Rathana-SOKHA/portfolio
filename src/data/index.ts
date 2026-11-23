@@ -22,9 +22,9 @@ export const personal = {
   social: {
     github: "https://github.com/Rathana-SOKHA",
     linkedin: "https://linkedin.com",
+    telegram: "https://t.me",
     twitter: "https://twitter.com",
     facebook: "https://facebook.com",
-    dribbble: "https://dribbble.com",
   },
   facts: [
     { icon: "Coffee", label: "Cups of coffee per day", value: "3–4" },

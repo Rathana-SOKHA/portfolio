@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
+import { GithubIcon, LinkedinIcon, TelegramIcon } from "./SocialIcons";
 import { personal } from "../data";
 
 const fadeUp = {
@@ -18,7 +18,7 @@ type FormState = "idle" | "sending" | "success" | "error";
 const socialLinks = [
   { icon: GithubIcon, href: personal.social.github, label: "GitHub" },
   { icon: LinkedinIcon, href: personal.social.linkedin, label: "LinkedIn" },
-  { icon: TwitterIcon, href: personal.social.twitter, label: "Twitter" },
+  { icon: TelegramIcon, href: personal.social.telegram, label: "Telegram" },
 ];
 
 export default function Contact() {

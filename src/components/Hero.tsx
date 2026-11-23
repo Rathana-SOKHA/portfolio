@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Circle } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon, FacebookIcon, DribbbleIcon } from "./SocialIcons";
+import { GithubIcon, LinkedinIcon, TelegramIcon, FacebookIcon } from "./SocialIcons";
 import { personal } from "../data";
 
 const socialIcons = [
   { icon: GithubIcon, href: personal.social.github, label: "GitHub" },
   { icon: LinkedinIcon, href: personal.social.linkedin, label: "LinkedIn" },
-  { icon: TwitterIcon, href: personal.social.twitter, label: "Twitter" },
+  { icon: TelegramIcon, href: personal.social.telegram, label: "Telegram" },
   { icon: FacebookIcon, href: personal.social.facebook, label: "Facebook" },
-  { icon: DribbbleIcon, href: personal.social.dribbble, label: "Dribbble" },
 ];
 
 const containerVariants = {
