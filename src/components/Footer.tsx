@@ -1,15 +1,16 @@
 import { ArrowUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GithubIcon, LinkedinIcon, TelegramIcon, FacebookIcon } from "./SocialIcons";
 import { personal } from "../data";
 
 const footerLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { key: "home", label: "Home", href: "#home" },
+  { key: "about", label: "About", href: "#about" },
+  { key: "skills", label: "Skills", href: "#skills" },
+  { key: "projects", label: "Projects", href: "#projects" },
+  { key: "education", label: "Education", href: "#education" },
+  { key: "experience", label: "Experience", href: "#experience" },
+  { key: "contact", label: "Contact", href: "#contact" },
 ];
 
 const socialLinks = [
@@ -20,6 +21,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useTranslation();
   const handleNav = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -45,7 +47,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xs">
-              {personal.tagline}
+              {t("hero.tagline", personal.tagline)}
             </p>
             <div className="flex gap-1">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -66,16 +68,16 @@ export default function Footer() {
           {/* Nav links */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-4">
-              Navigation
+              {t("footer.navigation", "Navigation")}
             </p>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <button
                     onClick={() => handleNav(link.href)}
-                    className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
                   >
-                    {link.label}
+                    {t(`nav.${link.key}`, link.label)}
                   </button>
                 </li>
               ))}
@@ -85,7 +87,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 mb-4">
-              Contact
+              {t("footer.contact", "Contact")}
             </p>
             <ul className="space-y-2">
               <li>
@@ -104,13 +106,13 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-zinc-100 dark:border-zinc-800">
           <p className="text-xs text-zinc-400 dark:text-zinc-500">
-            © {new Date().getFullYear()} {personal.name}. All rights reserved.
+            © {new Date().getFullYear()} {personal.name}. {t("footer.rights", "All rights reserved.")}
           </p>
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-2 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-200 dark:hover:border-indigo-700 transition-all"
+            className="group flex items-center gap-2 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-700 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-200 dark:hover:border-indigo-700 transition-all cursor-pointer"
           >
-            Back to top
+            {t("footer.backToTop", "Back to top")}
             <ArrowUp
               size={12}
               className="transition-transform group-hover:-translate-y-0.5"

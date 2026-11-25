@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Monitor, Server, Code2, Layers, Database, Palette } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { skills } from "../data";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -86,6 +87,7 @@ const levels = [
 ];
 
 export default function Skills() {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -101,10 +103,10 @@ export default function Skills() {
             animate={inView ? "visible" : "hidden"}
           >
             <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-              Skills & Expertise
+              {t("skills.badge", "Skills & Technologies")}
             </span>
             <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-              My toolkit.
+              {t("skills.heading", "Tools & technologies I work with.")}
             </h2>
           </motion.div>
 

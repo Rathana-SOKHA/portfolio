@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { education } from "../data";
 
 const fadeUp = {
@@ -12,6 +13,7 @@ const fadeUp = {
 };
 
 export default function Education() {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -27,10 +29,10 @@ export default function Education() {
           className="mb-16"
         >
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-            Education
+            {t("education.badge", "Education")}
           </span>
           <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-            Academic background.
+            {t("education.heading", "Academic background.")}
           </h2>
         </motion.div>
 

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ExternalLink, Briefcase, GraduationCap, User, FolderGit2, ChevronDown, Lock, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GithubIcon } from "./SocialIcons";
 import { projects, type ProjectCategory } from "../data";
 
@@ -54,6 +55,23 @@ function ProjectCard({
   index: number;
   inView: boolean;
 }) {
+  const { t } = useTranslation();
+
+  const getCategoryLabel = (cat: ProjectCategory) => {
+    switch (cat) {
+      case "All":
+        return t("projects.categories.all", "All");
+      case "Company Project":
+        return t("projects.categories.company", "Company Project");
+      case "School Project":
+        return t("projects.categories.school", "School Project");
+      case "Personal Project":
+        return t("projects.categories.personal", "Personal Project");
+      default:
+        return cat;
+    }
+  };
+
   return (
     <motion.article
       layout
@@ -81,12 +99,12 @@ function ProjectCard({
             className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-zinc-900 text-sm font-medium shadow-lg hover:bg-indigo-50 transition-colors"
           >
             <ExternalLink size={14} />
-            Live Demo
+            {t("projects.buttons.liveDemo", "Live Demo")}
           </a>
           {project.visibility === "Private" && project.githubUrl === "#" ? (
             <span className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/80 backdrop-blur-sm text-zinc-300 text-sm font-medium">
               <Lock size={13} className="text-amber-400" />
-              Private Code
+              {t("projects.buttons.privateCode", "Private Code")}
             </span>
           ) : (
             <a
@@ -96,7 +114,7 @@ function ProjectCard({
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/80 backdrop-blur-sm text-white text-sm font-medium hover:bg-zinc-900 transition-colors"
             >
               <GithubIcon size={14} />
-              Code
+              {t("projects.buttons.code", "Code")}
             </a>
           )}
         </div>
@@ -109,7 +127,7 @@ function ProjectCard({
             )}`}
           >
             {getCategoryIcon(project.category, 12)}
-            {project.category}
+            {getCategoryLabel(project.category)}
           </span>
         </div>
 
@@ -118,12 +136,12 @@ function ProjectCard({
           {project.visibility === "Private" ? (
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-900/85 text-zinc-100 border border-zinc-700/60 backdrop-blur-md text-xs font-medium shadow-sm">
               <Lock size={11} className="text-amber-400 stroke-[2.2]" />
-              <span>Private</span>
+              <span>{t("projects.visibility.private", "Private")}</span>
             </div>
           ) : (
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-600/90 text-white border border-emerald-500/30 backdrop-blur-md text-xs font-medium shadow-sm">
               <Globe size={11} className="text-emerald-100 stroke-[2.2]" />
-              <span>Public</span>
+              <span>{t("projects.visibility.public", "Public")}</span>
             </div>
           )}
         </div>
@@ -155,6 +173,7 @@ function ProjectCard({
 }
 
 export default function Projects() {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const [active, setActive] = useState<ProjectCategory>("All");
@@ -166,6 +185,21 @@ export default function Projects() {
   const INITIAL_COUNT = 6;
   const hasMore = filtered.length > INITIAL_COUNT;
   const displayedProjects = showAll ? filtered : filtered.slice(0, INITIAL_COUNT);
+
+  const getCategoryLabel = (cat: ProjectCategory) => {
+    switch (cat) {
+      case "All":
+        return t("projects.categories.all", "All");
+      case "Company Project":
+        return t("projects.categories.company", "Company Project");
+      case "School Project":
+        return t("projects.categories.school", "School Project");
+      case "Personal Project":
+        return t("projects.categories.personal", "Personal Project");
+      default:
+        return cat;
+    }
+  };
 
   return (
     <section id="projects" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30 overflow-hidden">
@@ -179,13 +213,13 @@ export default function Projects() {
             animate={inView ? "visible" : "hidden"}
           >
             <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-              Projects
+              {t("projects.badge", "Projects")}
             </span>
             <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-              Selected work.
+              {t("projects.heading", "Selected work.")}
             </h2>
             <p className="mt-3 text-zinc-500 dark:text-zinc-400 max-w-md">
-              A curated selection of projects across company, school, and personal initiatives.
+              {t("projects.subheading", "A curated selection of projects across company, school, and personal initiatives.")}
             </p>
           </motion.div>
 
@@ -211,14 +245,14 @@ export default function Projects() {
                     setActive(cat);
                     setShowAll(false);
                   }}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-sm shadow-indigo-500/20"
                       : "bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 hover:border-indigo-200 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400"
                   }`}
                 >
                   {getCategoryIcon(cat, 14)}
-                  <span>{cat}</span>
+                  <span>{getCategoryLabel(cat)}</span>
                   <span
                     className={`text-xs px-1.5 py-0.5 rounded-full ${
                       isActive
@@ -257,8 +291,8 @@ export default function Projects() {
             >
               <span>
                 {showAll
-                  ? "Show Less"
-                  : `View All Projects (${filtered.length})`}
+                  ? t("projects.buttons.showLess", "Show Less")
+                  : `${t("projects.buttons.viewAll", "View All Projects")} (${filtered.length})`}
               </span>
               <ChevronDown
                 size={16}
@@ -272,7 +306,7 @@ export default function Projects() {
 
         {filtered.length === 0 && (
           <div className="text-center py-24 text-zinc-400 dark:text-zinc-600">
-            No projects in this category yet.
+            {t("projects.noProjects", "No projects in this category yet.")}
           </div>
         )}
       </div>

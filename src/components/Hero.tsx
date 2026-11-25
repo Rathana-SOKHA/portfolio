@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Circle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GithubIcon, LinkedinIcon, TelegramIcon, FacebookIcon } from "./SocialIcons";
 import { personal } from "../data";
 
@@ -21,6 +22,7 @@ const itemVariants = {
 };
 
 export default function Hero() {
+  const { t } = useTranslation();
   const handleNav = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -51,7 +53,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50 dark:bg-emerald-950/40">
                 <Circle size={6} className="fill-emerald-500 text-emerald-500 animate-pulse" />
                 <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-                  {personal.availabilityText}
+                  {t("hero.available", personal.availabilityText)}
                 </span>
               </div>
             </motion.div>
@@ -65,7 +67,7 @@ export default function Hero() {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 font-medium">
-                {personal.title}
+                {t("hero.title", personal.title)}
               </p>
             </motion.div>
 
@@ -74,7 +76,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-zinc-600 dark:text-zinc-300 text-lg leading-relaxed max-w-xl"
             >
-              {personal.tagline}
+              {t("hero.tagline", personal.tagline)}
             </motion.p>
 
             {/* Bio short */}
@@ -82,16 +84,16 @@ export default function Hero() {
               variants={itemVariants}
               className="text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xl text-sm"
             >
-              {personal.bio}
+              {t("about.bio1", personal.bio)}
             </motion.p>
 
             {/* CTAs */}
             <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 onClick={() => handleNav("#projects")}
-                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 dark:bg-indigo-500 text-white font-medium hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all duration-200 shadow-lg shadow-indigo-500/20"
+                className="group inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 dark:bg-indigo-500 text-white font-medium hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all duration-200 shadow-lg shadow-indigo-500/20 cursor-pointer"
               >
-                View My Work
+                {t("hero.viewWork", "View My Work")}
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-200 group-hover:translate-x-1"
@@ -99,10 +101,10 @@ export default function Hero() {
               </button>
               <button
                 onClick={() => handleNav("#contact")}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800/60 transition-all duration-200 cursor-pointer"
               >
                 <Mail size={16} />
-                Contact Me
+                {t("hero.getInTouch", "Contact Me")}
               </button>
             </motion.div>
 
@@ -159,7 +161,9 @@ export default function Hero() {
                 className="absolute -right-2 sm:-right-4 top-3 sm:top-6 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-2xl px-3.5 py-2 sm:px-4 sm:py-2.5 shadow-xl border border-zinc-100 dark:border-zinc-800 z-10"
               >
                 <p className="text-lg sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50">5+</p>
-                <p className="text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400 font-medium">Years Exp.</p>
+                <p className="text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+                  {t("hero.experienceYears", "Years of Experience")}
+                </p>
               </motion.div>
 
               {/* Floating badge — projects (bottom left) */}
@@ -170,7 +174,9 @@ export default function Hero() {
                 className="absolute -left-2 sm:-left-4 bottom-4 sm:bottom-8 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md rounded-2xl px-3.5 py-2 sm:px-4 sm:py-2.5 shadow-xl border border-zinc-100 dark:border-zinc-800 z-10"
               >
                 <p className="text-lg sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50">20+</p>
-                <p className="text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400 font-medium">Projects Done</p>
+                <p className="text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+                  {t("hero.projectsCompleted", "Projects Done")}
+                </p>
               </motion.div>
             </div>
           </motion.div>

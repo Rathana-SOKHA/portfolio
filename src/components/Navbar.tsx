@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun, Download } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../context/ThemeContext";
 import { personal } from "../data";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { key: "home", label: "Home", href: "#home" },
+  { key: "about", label: "About", href: "#about" },
+  { key: "skills", label: "Skills", href: "#skills" },
+  { key: "projects", label: "Projects", href: "#projects" },
+  { key: "education", label: "Education", href: "#education" },
+  { key: "experience", label: "Experience", href: "#experience" },
+  { key: "contact", label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -115,7 +118,7 @@ export default function Navbar() {
                         : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60"
                     }`}
                   >
-                    {link.label}
+                    {t(`nav.${link.key}`, link.label)}
                     {isActive && (
                       <motion.span
                         layoutId="nav-indicator"
@@ -130,6 +133,9 @@ export default function Navbar() {
 
             {/* Right actions */}
             <div className="flex items-center gap-2">
+              {/* Language Switcher */}
+              <LanguageSwitcher />
+
               {/* Modern Animated Theme Toggle Switch */}
               <button
                 data-theme-toggle
@@ -194,7 +200,7 @@ export default function Navbar() {
                 className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 dark:bg-indigo-500 text-white text-sm font-medium hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-all duration-200 shadow-sm shadow-indigo-500/20"
               >
                 <Download size={14} />
-                Resume
+                {t("nav.resume", "Resume")}
               </a>
 
               <button
@@ -232,7 +238,7 @@ export default function Navbar() {
                       : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/60"
                   }`}
                 >
-                  {link.label}
+                  {t(`nav.${link.key}`, link.label)}
                 </motion.button>
               ))}
               <div className="mt-2 pt-2 border-t border-zinc-100 dark:border-zinc-800">
@@ -241,7 +247,7 @@ export default function Navbar() {
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition-all"
                 >
                   <Download size={14} />
-                  Download Resume
+                  {t("nav.downloadResume", "Download Resume")}
                 </a>
               </div>
             </nav>

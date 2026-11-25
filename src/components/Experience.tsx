@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Calendar, Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { experience } from "../data";
 
 const fadeUp = {
@@ -19,6 +20,7 @@ const typeColors: Record<string, string> = {
 };
 
 export default function Experience() {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -34,13 +36,13 @@ export default function Experience() {
           className="mb-16"
         >
           <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
-            Experience
+            {t("experience.badge", "Experience")}
           </span>
           <h2 className="mt-3 text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-            Work Experiences.
+            {t("experience.heading", "Work Experiences.")}
           </h2>
           <p className="mt-3 text-zinc-500 dark:text-zinc-400 max-w-lg">
-            Places I've contributed to, roles I've grown through, and teams I've learned from.
+            {t("experience.subheading", "Places I've contributed to, roles I've grown through, and teams I've learned from.")}
           </p>
         </motion.div>
 

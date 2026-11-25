@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "experience": "Experience",
+    "contact": "Contact",
+    "resume": "Resume",
+    "downloadResume": "Download Resume"
+  },
+  "hero": {
+    "available": "Open to opportunities",
+    "greeting": "Hello, I'm",
+    "title": "Full-Stack Developer & Software Engineer",
+    "tagline": "Crafting digital experiences that balance form and function.",
+    "viewWork": "View Work",
+    "getInTouch": "Get in touch",
+    "downloadCv": "Download CV",
+    "experienceYears": "Years of Experience",
+    "projectsCompleted": "Projects Done"
+  },
+  "about": {
+    "badge": "About Me",
+    "heading": "Engineering with purpose, designing with intention.",
+    "bio1": "I'm a full-stack developer with 5+ years of experience building scalable web applications and thoughtful user interfaces. I believe great software is built at the intersection of clean engineering and intentional design.",
+    "bio2": "With a background spanning both engineering and design, I bring a holistic perspective to every project. I specialize in React ecosystems, Node.js backends, and creating interfaces that feel as good as they work. Currently open to exciting opportunities and collaborations.",
+    "philosophyTitle": "My Philosophy",
+    "philosophy": "I write code the same way I design — with intention. Every line should serve a purpose, every component should earn its place. I value simplicity, clarity, and the kind of craftsmanship that users feel even when they can't quite explain it.",
+    "facts": {
+      "coffee": "Cups of coffee per day",
+      "code": "Lines of code written",
+      "clients": "Countries worked with clients",
+      "stars": "GitHub stars earned"
+    }
+  },
+  "skills": {
+    "badge": "Skills & Technologies",
+    "heading": "Tools & technologies I work with.",
+    "subheading": "A snapshot of the languages, frameworks, databases, and tools I use to bring ideas to life."
+  },
+  "projects": {
+    "badge": "Projects",
+    "heading": "Selected work.",
+    "subheading": "A curated selection of projects across company, school, and personal initiatives.",
+    "categories": {
+      "all": "All",
+      "company": "Company Project",
+      "school": "School Project",
+      "personal": "Personal Project"
+    },
+    "visibility": {
+      "public": "Public",
+      "private": "Private"
+    },
+    "buttons": {
+      "liveDemo": "Live Demo",
+      "code": "Code",
+      "privateCode": "Private Code",
+      "viewAll": "View All Projects",
+      "showLess": "Show Less"
+    },
+    "noProjects": "No projects in this category yet."
+  },
+  "education": {
+    "badge": "Education",
+    "heading": "Academic background."
+  },
+  "experience": {
+    "badge": "Experience",
+    "heading": "Work Experiences.",
+    "subheading": "Places I've contributed to, roles I've grown through, and teams I've learned from."
+  },
+  "contact": {
+    "badge": "Get in touch",
+    "heading": "Let's build something great together.",
+    "subheading": "Have a project in mind, a question, or just want to connect? My inbox is always open.",
+    "infoTitle": "Contact Information",
+    "location": "Location",
+    "email": "Email",
+    "phone": "Phone",
+    "availability": "Availability",
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "John Doe",
+      "email": "Your Email",
+      "emailPlaceholder": "john@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Project inquiry / Collaboration",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project, timeline, and goals...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Failed to send message. Please try again or email directly."
+    }
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "backToTop": "Back to top",
+    "designedWith": "Designed & built with intention."
+  }
+}
