@@ -1,4 +1,9 @@
 {
+  "personal": {
+    "name": "Rathana Sokha",
+    "firstName": "Rathana",
+    "lastName": "Sokha"
+  },
   "nav": {
     "home": "Home",
     "about": "About",

@@ -43,7 +43,10 @@ export default function Footer() {
                 />
               </div>
               <span className="font-semibold text-zinc-900 dark:text-zinc-100">
-                {personal.firstName} <span className="text-indigo-600 dark:text-indigo-400">{personal.lastName}</span>
+                {t("personal.firstName", personal.firstName)}{" "}
+                <span className="text-indigo-600 dark:text-indigo-400">
+                  {t("personal.lastName", personal.lastName)}
+                </span>
               </span>
             </div>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xs">
@@ -106,7 +109,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-zinc-100 dark:border-zinc-800">
           <p className="text-xs text-zinc-400 dark:text-zinc-500">
-            © {new Date().getFullYear()} {personal.name}. {t("footer.rights", "All rights reserved.")}
+            © {new Date().getFullYear()} {t("personal.name", personal.name)}. {t("footer.rights", "All rights reserved.")}
           </p>
           <button
             onClick={scrollToTop}

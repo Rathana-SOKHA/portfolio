@@ -99,8 +99,10 @@ export default function Navbar() {
                 />
               </div>
               <span className="font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
-                {personal.firstName}
-                <span className="text-indigo-600 dark:text-indigo-400"> {personal.lastName}</span>
+                {t("personal.firstName", personal.firstName)}{" "}
+                <span className="text-indigo-600 dark:text-indigo-400">
+                  {t("personal.lastName", personal.lastName)}
+                </span>
               </span>
             </button>
 

@@ -61,9 +61,9 @@ export default function Hero() {
             {/* Headline */}
             <motion.div variants={itemVariants} className="space-y-3">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.08]">
-                {personal.firstName}{" "}
+                {t("personal.firstName", personal.firstName)}{" "}
                 <span className="text-indigo-600 dark:text-indigo-400">
-                  {personal.lastName}
+                  {t("personal.lastName", personal.lastName)}
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 font-medium">
