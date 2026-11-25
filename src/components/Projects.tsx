@@ -1,24 +1,54 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ExternalLink, Star } from "lucide-react";
+import { ExternalLink, Star, Briefcase, GraduationCap, User, FolderGit2 } from "lucide-react";
 import { GithubIcon } from "./SocialIcons";
 import { projects, type ProjectCategory } from "../data";
 
-const categories: ProjectCategory[] = ["All", "Web App", "Mobile", "Open Source", "Design"];
+const categories: ProjectCategory[] = [
+  "All",
+  "Company Project",
+  "School Project",
+  "Personal Project",
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] as const },
   }),
 };
+
+function getCategoryIcon(cat: ProjectCategory, size = 13) {
+  switch (cat) {
+    case "Company Project":
+      return <Briefcase size={size} />;
+    case "School Project":
+      return <GraduationCap size={size} />;
+    case "Personal Project":
+      return <User size={size} />;
+    default:
+      return <FolderGit2 size={size} />;
+  }
+}
+
+function getCategoryBadgeClass(cat: ProjectCategory) {
+  switch (cat) {
+    case "Company Project":
+      return "bg-blue-50/90 text-blue-700 border-blue-200/60 dark:bg-blue-950/80 dark:text-blue-300 dark:border-blue-800/60";
+    case "School Project":
+      return "bg-emerald-50/90 text-emerald-700 border-emerald-200/60 dark:bg-emerald-950/80 dark:text-emerald-300 dark:border-emerald-800/60";
+    case "Personal Project":
+      return "bg-purple-50/90 text-purple-700 border-purple-200/60 dark:bg-purple-950/80 dark:text-purple-300 dark:border-purple-800/60";
+    default:
+      return "bg-zinc-50/90 text-zinc-700 border-zinc-200/60 dark:bg-zinc-900/80 dark:text-zinc-300 dark:border-zinc-700/60";
+  }
+}
 
 function ProjectCard({
   project,
   index,
-  inView,
 }: {
   project: (typeof projects)[0];
   index: number;
@@ -66,7 +96,12 @@ function ProjectCard({
 
         {/* Category badge */}
         <div className="absolute top-3 left-3">
-          <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-white/90 dark:bg-zinc-900/90 text-zinc-700 dark:text-zinc-300 backdrop-blur-sm">
+          <span
+            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md border shadow-sm ${getCategoryBadgeClass(
+              project.category
+            )}`}
+          >
+            {getCategoryIcon(project.category, 12)}
             {project.category}
           </span>
         </div>
@@ -133,7 +168,7 @@ export default function Projects() {
               Selected work.
             </h2>
             <p className="mt-3 text-zinc-500 dark:text-zinc-400 max-w-md">
-              A curated selection of projects that showcase my range and approach.
+              A curated selection of projects across company, school, and personal initiatives.
             </p>
           </motion.div>
 
@@ -145,19 +180,37 @@ export default function Projects() {
             animate={inView ? "visible" : "hidden"}
             className="flex flex-wrap gap-2"
           >
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                  active === cat
-                    ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-sm shadow-indigo-500/20"
-                    : "bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 hover:border-indigo-200 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const count =
+                cat === "All"
+                  ? projects.length
+                  : projects.filter((p) => p.category === cat).length;
+              const isActive = active === cat;
+
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActive(cat)}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
+                    isActive
+                      ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-sm shadow-indigo-500/20"
+                      : "bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 hover:border-indigo-200 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400"
+                  }`}
+                >
+                  {getCategoryIcon(cat, 14)}
+                  <span>{cat}</span>
+                  <span
+                    className={`text-xs px-1.5 py-0.5 rounded-full ${
+                      isActive
+                        ? "bg-white/20 text-white"
+                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400"
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </motion.div>
         </div>
 

@@ -112,6 +112,13 @@ export default function CustomCursor() {
       scale: isClicking ? 0.9 : 1,
       opacity: 1,
     },
+    click: {
+      size: 28,
+      borderColor: isDark ? "rgba(129, 140, 248, 0.9)" : "rgba(79, 70, 229, 0.85)",
+      backgroundColor: isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(79, 70, 229, 0.15)",
+      scale: 0.85,
+      opacity: 1,
+    },
     card: {
       size: 56,
       borderColor: isDark ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.2)",

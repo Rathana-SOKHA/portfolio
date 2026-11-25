@@ -10,7 +10,7 @@ export const personal = {
   firstName: "Rathana",
   lastName: "Sokha",
   title: "Full-Stack Developer & Software Engineer",
-  // tagline: "Crafting digital experiences that balance form and function.",
+  tagline: "Crafting digital experiences that balance form and function.",
   bio: `I'm a full-stack developer with 5+ years of experience building scalable web applications and thoughtful user interfaces. I believe great software is built at the intersection of clean engineering and intentional design.`,
   longBio: `With a background spanning both engineering and design, I bring a holistic perspective to every project. I specialize in React ecosystems, Node.js backends, and creating interfaces that feel as good as they work. Currently open to exciting opportunities and collaborations.`,
   philosophy: `I write code the same way I design — with intention. Every line should serve a purpose, every component should earn its place. I value simplicity, clarity, and the kind of craftsmanship that users feel even when they can't quite explain it.`,
@@ -104,15 +104,15 @@ export const skills = [
   },
 ];
 
-export type ProjectCategory = "All" | "Web App" | "Mobile" | "Open Source" | "Design";
+export type ProjectCategory = "All" | "Company Project" | "School Project" | "Personal Project";
 
 export const projects = [
   {
     id: 1,
     title: "Sun and Moon Laundry Service",
     description:
-      "A comprehensive analytics dashboard for SaaS businesses. Features real-time data visualization, team collaboration tools, and an AI-powered insights engine.",
-    category: "Web App" as ProjectCategory,
+      "A commercial laundry and customer service platform featuring order tracking, scheduling, billing, and automated status notifications.",
+    category: "Company Project" as ProjectCategory,
     featured: true,
     image: smlImg,
     tags: ["React.js", "TypeScript", "Node.js", "PostgreSQL", "Docker", "CI/CD"],
@@ -121,10 +121,10 @@ export const projects = [
   },
   {
     id: 2,
-    title: "IT Asset & Invontory Management System ",
+    title: "IT Asset & Inventory Management System",
     description:
-      "An open-source component library and design system built for scalability. Includes 60+ components, Figma integration, and comprehensive documentation.",
-    category: "Open Source" as ProjectCategory,
+      "An enterprise system built for tracking IT assets, hardware allocation, maintenance logs, and department inventory workflows.",
+    category: "Company Project" as ProjectCategory,
     featured: true,
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
     tags: ["React.js", "TypeScript", "Laravel", "MySQL", "Docker", "CI/CD"],
@@ -133,34 +133,22 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Freelancer Marketplace",
-    description:
-      "A mobile-first travel planning application with offline support, collaborative itinerary building, and intelligent recommendations based on past trips.",
-    category: "Web" as ProjectCategory,
-    featured: true,
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=500&fit=crop",
-    tags: ["React.js", "TypeScript", "Node.js", "Express.js", "Prisma", "MySQL", "Docker"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 4,
     title: "PNC Student Selection Management System",
     description:
-      "A health and fitness tracking platform with habit streaks, nutrition logging, and personalized coaching. Integrates with wearable devices.",
-    category: "Web App" as ProjectCategory,
-    featured: false,
+      "A student admission and selection management platform designed for Passerelles numériques Cambodia to streamline candidate screening and examination.",
+    category: "School Project" as ProjectCategory,
+    featured: true,
     image: "https://images.unsplash.com/photo-1575389430958-f06c655da0ab?w=800&h=500&fit=crop",
     tags: ["Laravel", "Vue.js", "TypeScript", "Tailwind", "MySQL", "JWT"],
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    id: 5,
-    title: "Clearning Service Web Application",
+    id: 4,
+    title: "Cleaning Service Web Application",
     description:
-      "A drag-and-drop portfolio builder that generates blazing-fast static sites. Supports custom domains, analytics, and password-protected pages.",
-    category: "Web App" as ProjectCategory,
+      "A web application developed for on-demand cleaning service scheduling, booking appointments, service tracking, and automated invoicing.",
+    category: "School Project" as ProjectCategory,
     featured: false,
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop",
     tags: ["Node.js", "Express.js", "React.js", "Tailwindcss", "MySQL", "TypeORM"],
@@ -168,12 +156,24 @@ export const projects = [
     githubUrl: "#",
   },
   {
-    id: 6,
-    title: "E-Commerice Management System",
+    id: 5,
+    title: "Freelancer Marketplace",
     description:
-      "Complete brand identity design for a creative agency. Includes logo, typography system, color palette, and comprehensive brand guidelines.",
-    category: "Web" as ProjectCategory,
+      "A platform connecting freelance professionals with clients, featuring job postings, bid proposals, milestone tracking, and secure messaging.",
+    category: "Personal Project" as ProjectCategory,
     featured: true,
+    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=500&fit=crop",
+    tags: ["React.js", "TypeScript", "Node.js", "Express.js", "Prisma", "MySQL", "Docker"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 6,
+    title: "E-Commerce Management System",
+    description:
+      "A comprehensive e-commerce platform with product catalogs, shopping cart, order tracking, and Telegram bot notification integration.",
+    category: "Personal Project" as ProjectCategory,
+    featured: false,
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
     tags: ["Laravel Blade", "Vue.js", "TypeScript", "Tailwindcss", "MySQL", "OAuth", "Telegram bot"],
     liveUrl: "#",
