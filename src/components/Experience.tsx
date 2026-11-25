@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Calendar, Briefcase } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -17,8 +17,6 @@ const typeColors: Record<string, string> = {
   "Full-time": "bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 border-indigo-100 dark:border-indigo-800/40",
   Contract: "bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-100 dark:border-amber-800/40",
   Freelance: "bg-violet-50 dark:bg-violet-500/10 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800/40",
-  Intership: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-100 dark:border-emerald-800/40",
-  Internship: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-100 dark:border-emerald-800/40",
 };
 
 export default function Experience() {
@@ -54,98 +52,79 @@ export default function Experience() {
           <div className="absolute left-3 top-0 bottom-0 w-px bg-zinc-200 dark:bg-zinc-800 lg:hidden" />
 
           <div className="space-y-6">
-            {experience.map((exp, i) => {
-              const role = t(`experience.items.${exp.id}.role`, exp.role);
-              const company = t(`experience.items.${exp.id}.company`, exp.company);
-              const typeLabel = t(`experience.items.${exp.id}.type`, t(`experience.types.${exp.type}`, exp.type));
-              const start = t(`experience.items.${exp.id}.start`, exp.start);
-              const end = exp.end === "Present"
-                ? t("experience.present", "Present")
-                : t(`experience.items.${exp.id}.end`, exp.end);
-              const location = t(`experience.items.${exp.id}.location`, exp.location);
-              const description = t(`experience.items.${exp.id}.description`, exp.description);
-              const responsibilitiesRaw = t(`experience.items.${exp.id}.responsibilities`, {
-                returnObjects: true,
-                defaultValue: exp.responsibilities,
-              });
-              const responsibilities: string[] = Array.isArray(responsibilitiesRaw)
-                ? (responsibilitiesRaw as string[])
-                : exp.responsibilities;
+            {experience.map((exp, i) => (
+              <motion.div
+                key={exp.id}
+                custom={i + 1}
+                variants={fadeUp}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                className="relative"
+              >
+                {/* Dot (mobile) */}
+                <div className="absolute -left-5 top-6 w-2.5 h-2.5 rounded-full bg-indigo-600 dark:bg-indigo-500 border-2 border-white dark:border-zinc-950 lg:hidden" />
 
-              return (
-                <motion.div
-                  key={exp.id}
-                  custom={i + 1}
-                  variants={fadeUp}
-                  initial="hidden"
-                  animate={inView ? "visible" : "hidden"}
-                  className="relative"
-                >
-                  {/* Dot (mobile) */}
-                  <div className="absolute -left-5 top-6 w-2.5 h-2.5 rounded-full bg-indigo-600 dark:bg-indigo-500 border-2 border-white dark:border-zinc-950 lg:hidden" />
-
-                  <div className="grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-10">
-                    {/* Left — meta */}
-                    <div className="space-y-3">
-                      <div>
-                        <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
-                          {company}
-                        </h3>
-                        <p className="text-indigo-600 dark:text-indigo-400 font-medium text-sm">
-                          {role}
-                        </p>
-                      </div>
-                      <div className="flex flex-col gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
-                        <span className="flex items-center gap-1.5">
-                          <Calendar size={12} />
-                          {start} — {end}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <MapPin size={12} />
-                          {location}
-                        </span>
-                        <span className="flex items-center gap-1.5">
-                          <Briefcase size={12} />
-                          {typeLabel}
-                        </span>
-                      </div>
-                      <span
-                        className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium border ${
-                          typeColors[exp.type] || typeColors["Full-time"]
-                        }`}
-                      >
-                        {typeLabel}
+                <div className="grid lg:grid-cols-[280px_1fr] gap-6 lg:gap-10">
+                  {/* Left — meta */}
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+                        {exp.company}
+                      </h3>
+                      <p className="text-indigo-600 dark:text-indigo-400 font-medium text-sm">
+                        {exp.role}
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+                      <span className="flex items-center gap-1.5">
+                        <Calendar size={12} />
+                        {exp.start} — {exp.end}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <MapPin size={12} />
+                        {exp.location}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Briefcase size={12} />
+                        {exp.type}
                       </span>
                     </div>
+                    <span
+                      className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium border ${
+                        typeColors[exp.type] || typeColors["Full-time"]
+                      }`}
+                    >
+                      {exp.type}
+                    </span>
+                  </div>
 
-                    {/* Right — details */}
-                    <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 border border-zinc-100 dark:border-zinc-800 shadow-sm">
-                      <p className="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-4">
-                        {description}
-                      </p>
-                      <ul className="space-y-2 mb-5">
-                        {responsibilities.map((r, ri) => (
-                          <li key={ri} className="flex items-start gap-2 text-sm text-zinc-500 dark:text-zinc-400">
-                            <span className="mt-2 w-1 h-1 rounded-full bg-indigo-500 shrink-0" />
-                            {r}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-100 dark:border-zinc-800">
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-100 dark:border-zinc-700/60"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                  {/* Right — details */}
+                  <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 border border-zinc-100 dark:border-zinc-800 shadow-sm">
+                    <p className="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed mb-4">
+                      {exp.description}
+                    </p>
+                    <ul className="space-y-2 mb-5">
+                      {exp.responsibilities.map((r, ri) => (
+                        <li key={ri} className="flex items-start gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+                          <span className="mt-2 w-1 h-1 rounded-full bg-indigo-500 shrink-0" />
+                          {r}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-1.5 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 border border-zinc-100 dark:border-zinc-700/60"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

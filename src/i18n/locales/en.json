@@ -1,4 +1,4 @@
-{
+﻿{
   "personal": {
     "name": "Rathana Sokha",
     "firstName": "Rathana",
@@ -75,71 +75,7 @@
   "experience": {
     "badge": "Experience",
     "heading": "Work Experiences.",
-    "subheading": "Places I've contributed to, roles I've grown through, and teams I've learned from.",
-    "present": "Present",
-    "types": {
-      "Full-time": "Full-time",
-      "Contract": "Contract",
-      "Freelance": "Freelance",
-      "Intership": "Internship",
-      "Internship": "Internship"
-    },
-    "items": {
-      "1": {
-        "role": "Enterprise Applications & Software Development Engineer",
-        "type": "Internship",
-        "location": "Chroy Changvar, Phnom Penh, Cambodia.",
-        "start": "1 Sep 2026",
-        "end": "Present",
-        "description": "Leading frontend architecture for the Next.js dashboard and developer tooling products. Working closely with the design and DevEx teams.",
-        "responsibilities": [
-          "Led rewrite of the deployment dashboard — reduced load time by 60%.",
-          "Architected a new component library adopted across 4 product teams.",
-          "Mentored 3 junior engineers and ran bi-weekly frontend office hours.",
-          "Collaborated with design to build a fully accessible UI token system."
-        ]
-      },
-      "2": {
-        "role": "Software Engineer II",
-        "type": "Full-time",
-        "location": "San Francisco, CA",
-        "start": "2020",
-        "end": "2022",
-        "description": "Worked on the Stripe Dashboard, focusing on the financial reporting and data visualization surfaces used by millions of merchants.",
-        "responsibilities": [
-          "Built the new Revenue Recognition module from scratch.",
-          "Improved chart rendering performance by 40% via virtualization.",
-          "Drove adoption of TypeScript across the dashboard codebase.",
-          "Participated in Stripe's internal design system working group."
-        ]
-      },
-      "3": {
-        "role": "Frontend Engineer (Contract)",
-        "type": "Contract",
-        "location": "San Francisco, CA",
-        "start": "2019",
-        "end": "2020",
-        "description": "Contributed to the Figma web platform and plugin ecosystem during a high-growth period. Worked with the editor team on performance improvements.",
-        "responsibilities": [
-          "Optimized canvas rendering for large design files.",
-          "Developed internal tooling for the plugin review workflow.",
-          "Improved editor keyboard shortcut accessibility."
-        ]
-      },
-      "4": {
-        "role": "Full-Stack Developer & Designer",
-        "type": "Freelance",
-        "location": "Remote",
-        "start": "2017",
-        "end": "2019",
-        "description": "Designed and developed web products for startups and small businesses across e-commerce, SaaS, and media verticals.",
-        "responsibilities": [
-          "Delivered 20+ projects across e-commerce, SaaS, and media.",
-          "Built custom CMS solutions and headless e-commerce storefronts.",
-          "Provided UX consulting and design system workshops."
-        ]
-      }
-    }
+    "subheading": "Places I've contributed to, roles I've grown through, and teams I've learned from."
   },
   "contact": {
     "badge": "Get in touch",
