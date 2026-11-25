@@ -130,23 +130,63 @@ export default function Navbar() {
 
             {/* Right actions */}
             <div className="flex items-center gap-2">
+              {/* Modern Animated Theme Toggle Switch */}
               <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/60 transition-all duration-200"
+                data-theme-toggle
+                onClick={(e) => toggleTheme(e)}
+                className={`relative w-14 h-8 rounded-full p-1 transition-colors duration-300 flex items-center shadow-inner cursor-pointer select-none ${
+                  theme === "dark"
+                    ? "bg-zinc-800/90 border border-zinc-700/80"
+                    : "bg-indigo-50/90 border border-indigo-200/80"
+                }`}
                 aria-label="Toggle theme"
+                title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
               >
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={theme}
-                    initial={{ opacity: 0, rotate: -90, scale: 0.8 }}
-                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
-                    exit={{ opacity: 0, rotate: 90, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
-                    className="block"
+                {/* Background ambient detail: tiny stars in dark, rays in light */}
+                <div className="absolute inset-0 px-2 flex items-center justify-between pointer-events-none text-[10px]">
+                  <span
+                    className={`transition-opacity duration-300 ${
+                      theme === "dark" ? "opacity-90 text-amber-300" : "opacity-0"
+                    }`}
                   >
-                    {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-                  </motion.span>
-                </AnimatePresence>
+                    ✦
+                  </span>
+                  <span
+                    className={`transition-opacity duration-300 ${
+                      theme === "light" ? "opacity-80 text-amber-500" : "opacity-0"
+                    }`}
+                  >
+                    ☼
+                  </span>
+                </div>
+
+                {/* Animated sliding thumb */}
+                <motion.div
+                  layout
+                  transition={{ type: "spring", stiffness: 600, damping: 32 }}
+                  className={`w-6 h-6 rounded-full flex items-center justify-center shadow-md relative z-10 ${
+                    theme === "dark"
+                      ? "ml-auto bg-zinc-900 text-indigo-400 border border-zinc-700/60"
+                      : "mr-auto bg-white text-amber-500 border border-amber-200/50"
+                  }`}
+                >
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={theme}
+                      initial={{ scale: 0.5, rotate: -180, opacity: 0 }}
+                      animate={{ scale: 1, rotate: 0, opacity: 1 }}
+                      exit={{ scale: 0.5, rotate: 180, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="flex items-center justify-center"
+                    >
+                      {theme === "dark" ? (
+                        <Moon size={13} className="fill-indigo-400/20 stroke-[2.2]" />
+                      ) : (
+                        <Sun size={13} className="fill-amber-400/30 stroke-[2.2]" />
+                      )}
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.div>
               </button>
 
               <a

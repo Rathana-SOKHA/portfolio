@@ -4,7 +4,7 @@ type Theme = "light" | "dark";
 
 interface ThemeContextValue {
   theme: Theme;
-  toggleTheme: () => void;
+  toggleTheme: (event?: React.MouseEvent | MouseEvent) => void;
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
@@ -38,22 +38,75 @@ function applyTheme(theme: Theme) {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
-  // Apply theme on every change
+  // Apply theme on initial load
   useEffect(() => {
     applyTheme(theme);
   }, [theme]);
 
-  // Also apply immediately on mount (before paint) in case localStorage is out of sync
+  // Also apply immediately on mount
   useEffect(() => {
     applyTheme(theme);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const toggleTheme = () =>
-    setTheme((current) => {
-      const next = current === "light" ? "dark" : "light";
-      return next;
+  const toggleTheme = (event?: React.MouseEvent | MouseEvent) => {
+    const next: Theme = theme === "light" ? "dark" : "light";
+
+    // Fallback if View Transitions API is not supported or user prefers reduced motion
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if (
+      typeof document === "undefined" ||
+      !("startViewTransition" in document) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      applyTheme(next);
+      setTheme(next);
+      return;
+    }
+
+    let x = window.innerWidth / 2;
+    let y = 0;
+
+    if (event && "clientX" in event) {
+      x = event.clientX;
+      y = event.clientY;
+    } else {
+      const toggleEl = document.querySelector("[data-theme-toggle]");
+      if (toggleEl) {
+        const rect = toggleEl.getBoundingClientRect();
+        x = rect.left + rect.width / 2;
+        y = rect.top + rect.height / 2;
+      }
+    }
+
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const transition = (document as any).startViewTransition(() => {
+      applyTheme(next);
+      setTheme(next);
     });
+
+    transition.ready.then(() => {
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`,
+      ];
+
+      document.documentElement.animate(
+        {
+          clipPath,
+        },
+        {
+          duration: 480,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          pseudoElement: "::view-transition-new(root)",
+        }
+      );
+    });
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
