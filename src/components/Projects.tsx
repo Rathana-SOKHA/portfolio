@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ExternalLink, Star, Briefcase, GraduationCap, User, FolderGit2, ChevronDown } from "lucide-react";
+import { ExternalLink, Briefcase, GraduationCap, User, FolderGit2, ChevronDown, Lock, Globe } from "lucide-react";
 import { GithubIcon } from "./SocialIcons";
 import { projects, type ProjectCategory } from "../data";
 
@@ -83,15 +83,22 @@ function ProjectCard({
             <ExternalLink size={14} />
             Live Demo
           </a>
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/80 backdrop-blur-sm text-white text-sm font-medium hover:bg-zinc-900 transition-colors"
-          >
-            <GithubIcon size={14} />
-            Code
-          </a>
+          {project.visibility === "Private" && project.githubUrl === "#" ? (
+            <span className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/80 backdrop-blur-sm text-zinc-300 text-sm font-medium">
+              <Lock size={13} className="text-amber-400" />
+              Private Code
+            </span>
+          ) : (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-900/80 backdrop-blur-sm text-white text-sm font-medium hover:bg-zinc-900 transition-colors"
+            >
+              <GithubIcon size={14} />
+              Code
+            </a>
+          )}
         </div>
 
         {/* Category badge */}
@@ -106,15 +113,20 @@ function ProjectCard({
           </span>
         </div>
 
-        {/* Featured badge */}
-        {project.featured && (
-          <div className="absolute top-3 right-3">
-            <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-600 text-white text-xs font-medium">
-              <Star size={10} className="fill-current" />
-              Featured
+        {/* Public / Private badge */}
+        <div className="absolute top-3 right-3">
+          {project.visibility === "Private" ? (
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-zinc-900/85 text-zinc-100 border border-zinc-700/60 backdrop-blur-md text-xs font-medium shadow-sm">
+              <Lock size={11} className="text-amber-400 stroke-[2.2]" />
+              <span>Private</span>
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-600/90 text-white border border-emerald-500/30 backdrop-blur-md text-xs font-medium shadow-sm">
+              <Globe size={11} className="text-emerald-100 stroke-[2.2]" />
+              <span>Public</span>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Content */}

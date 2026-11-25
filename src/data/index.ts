@@ -105,6 +105,7 @@ export const skills = [
 ];
 
 export type ProjectCategory = "All" | "Company Project" | "School Project" | "Personal Project";
+export type ProjectVisibility = "Public" | "Private";
 
 export const projects = [
   {
@@ -113,6 +114,7 @@ export const projects = [
     description:
       "A commercial laundry and customer service platform featuring order tracking, scheduling, billing, and automated status notifications.",
     category: "Company Project" as ProjectCategory,
+    visibility: "Private" as ProjectVisibility,
     featured: true,
     image: smlImg,
     tags: ["React.js", "TypeScript", "Node.js", "PostgreSQL", "Docker", "CI/CD"],
@@ -125,6 +127,7 @@ export const projects = [
     description:
       "An enterprise system built for tracking IT assets, hardware allocation, maintenance logs, and department inventory workflows.",
     category: "Company Project" as ProjectCategory,
+    visibility: "Private" as ProjectVisibility,
     featured: true,
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
     tags: ["React.js", "TypeScript", "Laravel", "MySQL", "Docker", "CI/CD"],
@@ -137,6 +140,7 @@ export const projects = [
     description:
       "A student admission and selection management platform designed for Passerelles numériques Cambodia to streamline candidate screening and examination.",
     category: "School Project" as ProjectCategory,
+    visibility: "Private" as ProjectVisibility,
     featured: true,
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=500&fit=crop",
     tags: ["Laravel", "Vue.js", "TypeScript", "Tailwind", "MySQL", "JWT"],
@@ -149,6 +153,7 @@ export const projects = [
     description:
       "A web application developed for on-demand cleaning service scheduling, booking appointments, service tracking, and automated invoicing.",
     category: "School Project" as ProjectCategory,
+    visibility: "Public" as ProjectVisibility,
     featured: false,
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop",
     tags: ["Node.js", "Express.js", "React.js", "Tailwindcss", "MySQL", "TypeORM"],
@@ -161,6 +166,7 @@ export const projects = [
     description:
       "A platform connecting freelance professionals with clients, featuring job postings, bid proposals, milestone tracking, and secure messaging.",
     category: "Personal Project" as ProjectCategory,
+    visibility: "Public" as ProjectVisibility,
     featured: true,
     image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=500&fit=crop",
     tags: ["React.js", "TypeScript", "Node.js", "Express.js", "Prisma", "MySQL", "Docker"],
@@ -173,6 +179,7 @@ export const projects = [
     description:
       "A comprehensive e-commerce platform with product catalogs, shopping cart, order tracking, and Telegram bot notification integration.",
     category: "Personal Project" as ProjectCategory,
+    visibility: "Public" as ProjectVisibility,
     featured: false,
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
     tags: ["Laravel Blade", "Vue.js", "TypeScript",  "MySQL", "Tailwindcss", "OAuth", "Telegram bot"],
@@ -181,13 +188,14 @@ export const projects = [
   },
   {
     id: 7,
-    title: "E-Commerce Management System",
+    title: "Task Management & Analytics Dashboard",
     description:
-      "A comprehensive e-commerce platform with product catalogs, shopping cart, order tracking, and Telegram bot notification integration.",
+      "A productivity web app featuring kanban boards, real-time analytics, deadline notifications, and team activity streams.",
     category: "Personal Project" as ProjectCategory,
+    visibility: "Public" as ProjectVisibility,
     featured: false,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
-    tags: ["Laravel Blade", "Vue.js", "TypeScript", "Tailwindcss", "MySQL", "OAuth", "Telegram bot"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+    tags: ["React.js", "TypeScript", "Tailwindcss", "MySQL", "OAuth", "Telegram bot"],
     liveUrl: "#",
     githubUrl: "#",
   },
