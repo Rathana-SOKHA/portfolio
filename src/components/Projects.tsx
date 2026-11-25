@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ExternalLink, Star, Briefcase, GraduationCap, User, FolderGit2 } from "lucide-react";
+import { ExternalLink, Star, Briefcase, GraduationCap, User, FolderGit2, ChevronDown } from "lucide-react";
 import { GithubIcon } from "./SocialIcons";
 import { projects, type ProjectCategory } from "../data";
 
@@ -146,9 +146,14 @@ export default function Projects() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const [active, setActive] = useState<ProjectCategory>("All");
+  const [showAll, setShowAll] = useState(false);
 
   const filtered =
     active === "All" ? projects : projects.filter((p) => p.category === active);
+
+  const INITIAL_COUNT = 6;
+  const hasMore = filtered.length > INITIAL_COUNT;
+  const displayedProjects = showAll ? filtered : filtered.slice(0, INITIAL_COUNT);
 
   return (
     <section id="projects" className="py-24 lg:py-32 bg-zinc-50/50 dark:bg-zinc-900/30 overflow-hidden">
@@ -190,7 +195,10 @@ export default function Projects() {
               return (
                 <button
                   key={cat}
-                  onClick={() => setActive(cat)}
+                  onClick={() => {
+                    setActive(cat);
+                    setShowAll(false);
+                  }}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? "bg-indigo-600 dark:bg-indigo-500 text-white shadow-sm shadow-indigo-500/20"
@@ -217,11 +225,38 @@ export default function Projects() {
         {/* Projects grid */}
         <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
-            {filtered.map((project, i) => (
+            {displayedProjects.map((project, i) => (
               <ProjectCard key={project.id} project={project} index={i} inView={inView} />
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* View All Projects Button */}
+        {hasMore && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="mt-12 flex justify-center"
+          >
+            <button
+              onClick={() => setShowAll((prev) => !prev)}
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-medium text-sm shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 cursor-pointer group"
+            >
+              <span>
+                {showAll
+                  ? "Show Less"
+                  : `View All Projects (${filtered.length})`}
+              </span>
+              <ChevronDown
+                size={16}
+                className={`transition-transform duration-300 ${
+                  showAll ? "rotate-180" : "group-hover:translate-y-0.5"
+                }`}
+              />
+            </button>
+          </motion.div>
+        )}
 
         {filtered.length === 0 && (
           <div className="text-center py-24 text-zinc-400 dark:text-zinc-600">

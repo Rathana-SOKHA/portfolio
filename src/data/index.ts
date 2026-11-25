@@ -138,7 +138,7 @@ export const projects = [
       "A student admission and selection management platform designed for Passerelles numériques Cambodia to streamline candidate screening and examination.",
     category: "School Project" as ProjectCategory,
     featured: true,
-    image: "https://images.unsplash.com/photo-1575389430958-f06c655da0ab?w=800&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=500&fit=crop",
     tags: ["Laravel", "Vue.js", "TypeScript", "Tailwind", "MySQL", "JWT"],
     liveUrl: "#",
     githubUrl: "#",
@@ -169,6 +169,18 @@ export const projects = [
   },
   {
     id: 6,
+    title: "E-Commerce Management System",
+    description:
+      "A comprehensive e-commerce platform with product catalogs, shopping cart, order tracking, and Telegram bot notification integration.",
+    category: "Personal Project" as ProjectCategory,
+    featured: false,
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
+    tags: ["Laravel Blade", "Vue.js", "TypeScript", "Tailwindcss", "MySQL", "OAuth", "Telegram bot"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 7,
     title: "E-Commerce Management System",
     description:
       "A comprehensive e-commerce platform with product catalogs, shopping cart, order tracking, and Telegram bot notification integration.",
