@@ -175,7 +175,7 @@ export const projects = [
     category: "Personal Project" as ProjectCategory,
     featured: false,
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
-    tags: ["Laravel Blade", "Vue.js", "TypeScript", "Tailwindcss", "MySQL", "OAuth", "Telegram bot"],
+    tags: ["Laravel Blade", "Vue.js", "TypeScript",  "MySQL", "Tailwindcss", "OAuth", "Telegram bot"],
     liveUrl: "#",
     githubUrl: "#",
   },
