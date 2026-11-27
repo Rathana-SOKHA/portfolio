@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun, Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../context/ThemeContext";
-import { personal } from "../data";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { useTheme } from "../../context/ThemeContext";
+import { personal } from "../../data";
+import LanguageSwitcher from "../../context/LanguageSwitcher";
 
 const navLinks = [
   { key: "home", label: "Home", href: "#home" },

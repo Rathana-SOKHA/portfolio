@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ExternalLink, Briefcase, GraduationCap, User, FolderGit2, ChevronDown, Lock, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { GithubIcon } from "./SocialIcons";
+import { GithubIcon } from "../components/animations/SocialIcons";
 import { projects, type ProjectCategory } from "../data";
 
 const categories: ProjectCategory[] = [

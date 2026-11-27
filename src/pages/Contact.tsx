@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { GithubIcon, LinkedinIcon, TelegramIcon } from "./SocialIcons";
+import { GithubIcon, LinkedinIcon, TelegramIcon } from "../components/animations/SocialIcons";
 import { personal } from "../data";
 
 const fadeUp = {

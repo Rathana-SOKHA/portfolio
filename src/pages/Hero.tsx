@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Circle } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { GithubIcon, LinkedinIcon, TelegramIcon, FacebookIcon } from "./SocialIcons";
+import { GithubIcon, LinkedinIcon, TelegramIcon, FacebookIcon } from "../components/animations/SocialIcons";
 import { personal } from "../data";
 
 const socialIcons = [

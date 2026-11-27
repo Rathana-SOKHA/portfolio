@@ -1,7 +1,7 @@
 import { ArrowUp } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { GithubIcon, LinkedinIcon, TelegramIcon, FacebookIcon } from "./SocialIcons";
-import { personal } from "../data";
+import { GithubIcon, LinkedinIcon, TelegramIcon, FacebookIcon } from "../animations/SocialIcons";
+import { personal } from "../../data";
 
 const footerLinks = [
   { key: "home", label: "Home", href: "#home" },
