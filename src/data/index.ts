@@ -90,6 +90,7 @@ export const skills = [
       { name: "MongoDB", level: 78 },
       { name: "Redis", level: 70 },
       { name: "Docker / CI/CD", level: 75 },
+      { name: "Claudflare", level: 50}
     ],
   },
   {
