@@ -11,7 +11,7 @@ export const personal = {
   lastName: "Sokha",
   title: "Enterprise Applications & Software Development",
   tagline: "Crafting digital experiences that balance form and function.",
-  bio: `I'm a full-stack developer with 5+ years of experience building scalable web applications and thoughtful user interfaces. I believe great software is built at the intersection of clean engineering and intentional design.`,
+  bio: `I'm a Enterprise Applications & Software Development with 5+ years of experience building scalable web applications and thoughtful user interfaces. I believe great software is built at the intersection of clean engineering and intentional design.`,
   longBio: `With a background spanning both engineering and design, I bring a holistic perspective to every project. I specialize in React ecosystems, Node.js backends, and creating interfaces that feel as good as they work. Currently open to exciting opportunities and collaborations.`,
   philosophy: `I write code the same way I design — with intention. Every line should serve a purpose, every component should earn its place. I value simplicity, clarity, and the kind of craftsmanship that users feel even when they can't quite explain it.`,
   location: "San Francisco, CA",
