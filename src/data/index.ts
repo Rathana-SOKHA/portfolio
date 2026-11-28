@@ -9,7 +9,7 @@ export const personal = {
   name: "Rathana Sokha",
   firstName: "Rathana",
   lastName: "Sokha",
-  title: "Full-Stack Developer & Software Engineer",
+  title: "Enterprise Applications & Software Development",
   tagline: "Crafting digital experiences that balance form and function.",
   bio: `I'm a full-stack developer with 5+ years of experience building scalable web applications and thoughtful user interfaces. I believe great software is built at the intersection of clean engineering and intentional design.`,
   longBio: `With a background spanning both engineering and design, I bring a holistic perspective to every project. I specialize in React ecosystems, Node.js backends, and creating interfaces that feel as good as they work. Currently open to exciting opportunities and collaborations.`,
